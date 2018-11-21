@@ -5,12 +5,12 @@
       "connector": "strapi-hook-mongoose",
       "settings": {
         "client": "mongo",
-        "host": "127.0.0.1",
+        "host": "ds249737.mlab.com",
         "srv": false,
-        "port": 27017,
+        "port": 49737,
         "database": "aswanet",
-        "username": "",
-        "password": ""
+        "username": "aswanetUser",
+        "password": "password123"
       },
       "options": {
         "authenticationDatabase": "",
