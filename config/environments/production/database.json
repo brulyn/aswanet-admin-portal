@@ -6,15 +6,15 @@
       "settings": {
         "client": "mongo",
         "uri": "${process.env.DATABASE_URI || ''}",
-        "host": "${process.env.DATABASE_HOST || 'localhost'}",
-        "port": "${process.env.DATABASE_PORT || 27017}",
-        "database": "${process.env.DATABASE_NAME || 'production'}",
-        "username": "${process.env.DATABASE_USERNAME || ''}",
-        "password": "${process.env.DATABASE_PASSWORD || ''}"
+        "host": "${process.env.DATABASE_HOST || 'ds261917.mlab.com'}",
+        "port": "${process.env.DATABASE_PORT || '61917'}",
+        "database": "${process.env.DATABASE_NAME || 'heroku_ktt1gdts'}",
+        "username": "${process.env.DATABASE_USERNAME || 'aswanetUser'}",
+        "password": "${process.env.DATABASE_PASSWORD || 'password123'}"
       },
       "options": {
         "ssl": "${process.env.DATABASE_SSL || false}",
-        "authenticationDatabase": "${process.env.DATABASE_AUTHENTICATION_DATABASE || ''}"
+        "authenticationDatabase": "${process.env.DATABASE_NAME || 'heroku_ktt1gdts'}"
       }
     }
   }
