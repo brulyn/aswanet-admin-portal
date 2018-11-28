@@ -3,12 +3,16 @@
   "collectionName": "",
   "info": {
     "name": "staff",
-    "description": "Aswanet's staff to be seen in TEAM section"
+    "description": "Aswanet's staff to show on the website."
   },
   "options": {
     "timestamps": true
   },
   "attributes": {
+    "names": {
+      "default": "",
+      "type": "string"
+    },
     "position": {
       "default": "",
       "type": "string"
@@ -21,7 +25,25 @@
       "default": "",
       "type": "string"
     },
-    "names": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "facebook_url": {
+      "default": "",
+      "type": "string"
+    },
+    "linkedin_url": {
+      "default": "",
+      "type": "string"
+    },
+    "tweeter_url": {
+      "default": "",
+      "type": "string"
+    },
+    "email": {
       "default": "",
       "type": "string"
     }
