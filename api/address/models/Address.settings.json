@@ -1,0 +1,21 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "address",
+    "description": "Aswanet's address"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "line1": {
+      "default": "",
+      "type": "string"
+    },
+    "line2": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

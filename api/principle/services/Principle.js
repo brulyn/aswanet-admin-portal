@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Post.js service
+ * Principle.js service
  *
  * @description: A set of functions similar to controller's actions to avoid code duplication.
  */
@@ -12,21 +12,21 @@ const _ = require('lodash');
 module.exports = {
 
   /**
-   * Promise to fetch all posts.
+   * Promise to fetch all principles.
    *
    * @return {Promise}
    */
 
   fetchAll: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('post', params);
+    const filters = strapi.utils.models.convertParams('principle', params);
     // Select field to populate.
-    const populate = Post.associations
+    const populate = Principle.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return Post
+    return Principle
       .find()
       .where(filters.where)
       .sort(filters.sort)
@@ -36,90 +36,90 @@ module.exports = {
   },
 
   /**
-   * Promise to fetch a/an post.
+   * Promise to fetch a/an principle.
    *
    * @return {Promise}
    */
 
   fetch: (params) => {
     // Select field to populate.
-    const populate = Post.associations
+    const populate = Principle.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return Post
-      .findOne(_.pick(params, _.keys(Post.schema.paths)))
+    return Principle
+      .findOne(_.pick(params, _.keys(Principle.schema.paths)))
       .populate(populate);
   },
 
   /**
-   * Promise to count posts.
+   * Promise to count principles.
    *
    * @return {Promise}
    */
 
   count: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('post', params);
+    const filters = strapi.utils.models.convertParams('principle', params);
 
-    return Post
+    return Principle
       .count()
       .where(filters.where);
   },
 
   /**
-   * Promise to add a/an post.
+   * Promise to add a/an principle.
    *
    * @return {Promise}
    */
 
   add: async (values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, Post.associations.map(ast => ast.alias));
-    const data = _.omit(values, Post.associations.map(ast => ast.alias));
+    const relations = _.pick(values, Principle.associations.map(ast => ast.alias));
+    const data = _.omit(values, Principle.associations.map(ast => ast.alias));
 
     // Create entry with no-relational data.
-    const entry = await Post.create(data);
+    const entry = await Principle.create(data);
 
     // Create relational data and return the entry.
-    return Post.updateRelations({ _id: entry.id, values: relations });
+    return Principle.updateRelations({ _id: entry.id, values: relations });
   },
 
   /**
-   * Promise to edit a/an post.
+   * Promise to edit a/an principle.
    *
    * @return {Promise}
    */
 
   edit: async (params, values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, Post.associations.map(a => a.alias));
-    const data = _.omit(values, Post.associations.map(a => a.alias));
+    const relations = _.pick(values, Principle.associations.map(a => a.alias));
+    const data = _.omit(values, Principle.associations.map(a => a.alias));
 
     // Update entry with no-relational data.
-    const entry = await Post.update(params, data, { multi: true });
+    const entry = await Principle.update(params, data, { multi: true });
 
     // Update relational data and return the entry.
-    return Post.updateRelations(Object.assign(params, { values: relations }));
+    return Principle.updateRelations(Object.assign(params, { values: relations }));
   },
 
   /**
-   * Promise to remove a/an post.
+   * Promise to remove a/an principle.
    *
    * @return {Promise}
    */
 
   remove: async params => {
     // Select field to populate.
-    const populate = Post.associations
+    const populate = Principle.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
     // Note: To get the full response of Mongo, use the `remove()` method
     // or add spent the parameter `{ passRawResult: true }` as second argument.
-    const data = await Post
+    const data = await Principle
       .findOneAndRemove(params, {})
       .populate(populate);
 
@@ -128,7 +128,7 @@ module.exports = {
     }
 
     await Promise.all(
-      Post.associations.map(async association => {
+      Principle.associations.map(async association => {
         if (!association.via || !data._id) {
           return true;
         }
@@ -149,22 +149,22 @@ module.exports = {
   },
 
   /**
-   * Promise to search a/an post.
+   * Promise to search a/an principle.
    *
    * @return {Promise}
    */
 
   search: async (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('post', params);
+    const filters = strapi.utils.models.convertParams('principle', params);
     // Select field to populate.
-    const populate = Post.associations
+    const populate = Principle.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    const $or = Object.keys(Post.attributes).reduce((acc, curr) => {
-      switch (Post.attributes[curr].type) {
+    const $or = Object.keys(Principle.attributes).reduce((acc, curr) => {
+      switch (Principle.attributes[curr].type) {
         case 'integer':
         case 'float':
         case 'decimal':
@@ -188,7 +188,7 @@ module.exports = {
       }
     }, []);
 
-    return Post
+    return Principle
       .find({ $or })
       .sort(filters.sort)
       .skip(filters.start)

@@ -2,22 +2,20 @@
   "connection": "default",
   "collectionName": "",
   "info": {
-    "name": "post",
-    "description": ""
+    "name": "faq",
+    "description": "Frequently asked Questions"
   },
   "options": {
     "timestamps": true
   },
   "attributes": {
-    "Title": {
+    "question": {
       "default": "",
       "type": "string"
     },
-    "Background": {
-      "model": "file",
-      "via": "related",
-      "plugin": "upload",
-      "required": false
+    "answer": {
+      "default": "",
+      "type": "text"
     }
   }
 }

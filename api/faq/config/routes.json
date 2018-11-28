@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/posts",
-      "handler": "Post.find",
+      "path": "/faqs",
+      "handler": "Faq.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/posts/count",
-      "handler": "Post.count",
+      "path": "/faqs/count",
+      "handler": "Faq.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/posts/:_id",
-      "handler": "Post.findOne",
+      "path": "/faqs/:_id",
+      "handler": "Faq.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/posts",
-      "handler": "Post.create",
+      "path": "/faqs",
+      "handler": "Faq.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/posts/:_id",
-      "handler": "Post.update",
+      "path": "/faqs/:_id",
+      "handler": "Faq.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/posts/:_id",
-      "handler": "Post.destroy",
+      "path": "/faqs/:_id",
+      "handler": "Faq.destroy",
       "config": {
         "policies": []
       }

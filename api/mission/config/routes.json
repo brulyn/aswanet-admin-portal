@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/titles",
-      "handler": "Title.find",
+      "path": "/missions",
+      "handler": "Mission.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/titles/count",
-      "handler": "Title.count",
+      "path": "/missions/count",
+      "handler": "Mission.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/titles/:_id",
-      "handler": "Title.findOne",
+      "path": "/missions/:_id",
+      "handler": "Mission.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/titles",
-      "handler": "Title.create",
+      "path": "/missions",
+      "handler": "Mission.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/titles/:_id",
-      "handler": "Title.update",
+      "path": "/missions/:_id",
+      "handler": "Mission.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/titles/:_id",
-      "handler": "Title.destroy",
+      "path": "/missions/:_id",
+      "handler": "Mission.destroy",
       "config": {
         "policies": []
       }

@@ -1,0 +1,29 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "staff",
+    "description": "Aswanet's staff to be seen in TEAM section"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "position": {
+      "default": "",
+      "type": "string"
+    },
+    "intro": {
+      "default": "",
+      "type": "string"
+    },
+    "about": {
+      "default": "",
+      "type": "string"
+    },
+    "names": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

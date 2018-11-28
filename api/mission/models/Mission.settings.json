@@ -1,0 +1,17 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "mission",
+    "description": "Aswanet's mission"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "description": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}
